@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mCurrentIndex = mCurrentIndex+1 % mQuestionBank.length;
+                        mCurrentIndex = (mCurrentIndex+1) % mQuestionBank.length;
                         updateQuestion();
                         mTrueButton.setEnabled(true);
                         mFalseButton.setEnabled(true);
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mCurrentIndex = mCurrentIndex - 1 %  mQuestionBank.length;
+                        mCurrentIndex = (Math.abs(mCurrentIndex - 1)) %  mQuestionBank.length;
                         updateQuestion();
                     }
                 }
